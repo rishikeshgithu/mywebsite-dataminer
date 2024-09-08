@@ -1,0 +1,17 @@
+# Initialize a Git repository
+git init
+
+# Add your files
+git add .
+
+# Commit your changes
+git commit -m "Initial commit"
+
+# Set up the Azure Web App for local Git deployment
+az webapp deployment source config-local-git --name mywebsite-dataminer --resource-group mywebsite-dataminer_group
+
+# Add the Azure remote repository
+git remote add azure https://mywebsite-dataminer-baajb8h7b4e2czgg.southindia-01.azurewebsites.net/mywebsite-dataminer.git
+
+# Push your code to the Azure remote repository
+git push azure master
